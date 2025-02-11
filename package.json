@@ -9,8 +9,13 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint",
-    "knip": "knip"
+    "lint:check": "eslint --cache .",
+    "lint:fix": "eslint --cache --fix .",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,js}' --no-error-on-unmatched-pattern",
+    "format:check": "prettier --check './src/**/*.{ts,tsx,js}' --no-error-on-unmatched-pattern",
+    "lint-staged": "lint-staged",
+    "knip": "knip",
+    "prepare": "husky"
   },
   "jest": {
     "preset": "jest-expo"
@@ -43,9 +48,11 @@
     "eslint-config-expo": "~8.0.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.3",
     "knip": "^5.44.0",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.5.0",
     "react-test-renderer": "18.3.1",
     "typescript": "^5.7.3"
