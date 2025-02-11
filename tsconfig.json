@@ -6,7 +6,11 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "target": "ESNext",
+    "allowImportingTsExtensions": false,
+    "allowArbitraryExtensions": false,
+    "module": "ESNext"
   },
   "include": [
     "**/*.ts",

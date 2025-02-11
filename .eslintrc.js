@@ -7,7 +7,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['expo', 'prettier', 'plugin:@typescript-eslint/recommended-type-checked'],
+  extends: ['expo', 'prettier'],
   plugins: ['unused-imports', 'prefer-arrow', '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
