@@ -7,9 +7,9 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: color.blueDarker,
-        tabBarInactiveTintColor: 'gray',
+        tabBarInactiveTintColor: color.beigeDark,
         tabBarStyle: {
-          backgroundColor: 'white',
+          backgroundColor: color.white,
           borderTopWidth: 1,
           borderTopColor: '#ddd',
           height: 60,
@@ -27,7 +27,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Ionicons name='list' size={size} color={color} />,
         }}
       />
-
       <Tabs.Screen
         name='concursantes'
         options={{
@@ -35,7 +34,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Ionicons name='people' size={size} color={color} />,
         }}
       />
-
       <Tabs.Screen
         name='ajustes'
         options={{

@@ -19,9 +19,9 @@ export const ImageContent = ({ url }: { url: string }) => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    width: 150,
+    height: 150,
+    borderRadius: 24,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
