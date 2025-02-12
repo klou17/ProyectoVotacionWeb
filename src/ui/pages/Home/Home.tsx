@@ -1,5 +1,5 @@
 import { Text } from 'react-native'
 
-export const Home = () => {
+export const HomePage = () => {
   return <Text>Home</Text>
 }
