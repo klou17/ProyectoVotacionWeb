@@ -12,12 +12,7 @@
     "test:watch": "jest --watchAll",
     "format:fix": "prettier --write './src/**/*.{ts,tsx,js}' --no-error-on-unmatched-pattern",
     "format:check": "prettier --check './src/**/*.{ts,tsx,js}' --no-error-on-unmatched-pattern",
-    "lint-staged": "lint-staged",
-    "knip": "knip",
-    "lint": "eslint ."
-  },
-  "jest": {
-    "preset": "jest-expo"
+    "knip": "knip"
   },
   "dependencies": {
     "expo": "~52.0.32",
