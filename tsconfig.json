@@ -17,6 +17,8 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "jest.config.js",
+    "metro.config.js",
   ]
 }
