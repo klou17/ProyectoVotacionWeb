@@ -1,12 +1,15 @@
-import { Button } from '../../components/Button'
-import { ImageContent } from '../../components/Image'
-import { SocialMediaIcons } from '../../components/SocialMediaIcon'
+import { Button } from '../../../components/Button'
+import { ImageContent } from '../../../components/Image'
+import { SocialMediaIcons } from '../../../components/SocialMediaIcon'
+import { Persona } from '../persons'
+import { useRouter } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import { voteFavorite } from '@/src/core/useCases/voteFavorite'
 import { Text } from '@/src/ui/components/Text'
-import { Persona } from './persons'
 
-export const ConcursantePage = ({ persona }: { persona: Persona }) => {
+export const ConcursanteListItem = ({ persona }: { persona: Persona }) => {
+  const router = useRouter()
+
   return (
     <View style={styles.card}>
       <ImageContent url={persona.photo} />
@@ -17,6 +20,9 @@ export const ConcursantePage = ({ persona }: { persona: Persona }) => {
         {persona.description}
       </Text>
       <SocialMediaIcons social={persona.social} />
+      <Button onPress={() => router.push(`/concursante/${persona.id}`)}>
+        <Text>Ver mas</Text>
+      </Button>
       <Button onPress={() => voteFavorite()}>
         <View style={styles.rectangle}>
           <Text fontFamily='LatoRegular' color='blue'>

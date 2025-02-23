@@ -1,14 +1,14 @@
+import { persons } from '../persons'
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native'
-import { ConcursantePage } from './Concursante'
-import { persons } from './persons'
+import { ConcursanteListItem } from './ConcursanteListItem'
 
-export const ConcursantesPage = () => {
+export const ConcursantesList = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={persons}
         numColumns={3}
-        renderItem={({ item }) => <ConcursantePage persona={item} />}
+        renderItem={({ item }) => <ConcursanteListItem persona={item} />}
         keyExtractor={item => item.id}
         contentContainerStyle={styles.listContainer}
       />
