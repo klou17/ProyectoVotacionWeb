@@ -3,6 +3,9 @@ import * as SplashScreen from 'expo-splash-screen'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { useEffect } from 'react'
+import { buildModules, registerModules } from '@/src/di/moduleContainer'
+
+registerModules(buildModules())
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -24,7 +27,7 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name='(tabs)' />
-      <Stack.Screen name='concursante' />
+      <Stack.Screen name='concursante/id' />
     </Stack>
   )
 }

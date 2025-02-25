@@ -1,14 +1,16 @@
-import { persons } from '../persons'
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native'
+import { injectModule } from '@/src/di/injectModule'
 import { ConcursanteListItem } from './ConcursanteListItem'
 
 export const ConcursantesList = () => {
+  const candidates = injectModule('getAllCandidates')()
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={persons}
+        data={candidates}
         numColumns={3}
-        renderItem={({ item }) => <ConcursanteListItem persona={item} />}
+        renderItem={({ item }) => <ConcursanteListItem candidate={item} />}
         keyExtractor={item => item.id}
         contentContainerStyle={styles.listContainer}
       />

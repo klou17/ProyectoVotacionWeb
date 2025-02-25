@@ -1,29 +1,28 @@
 import { Button } from '../../../components/Button'
 import { ImageContent } from '../../../components/Image'
 import { SocialMediaIcons } from '../../../components/SocialMediaIcon'
-import { Persona } from '../persons'
 import { useRouter } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
-import { voteFavorite } from '@/src/core/useCases/voteFavorite'
+import { Candidate } from '@/src/core/candidates/domain/candidate'
 import { Text } from '@/src/ui/components/Text'
 
-export const ConcursanteListItem = ({ persona }: { persona: Persona }) => {
+export const ConcursanteListItem = ({ candidate }: { candidate: Candidate }) => {
   const router = useRouter()
 
   return (
     <View style={styles.card}>
-      <ImageContent url={persona.photo} />
+      <ImageContent url={candidate.photo} />
       <Text fontFamily='LatoBold' size='md'>
-        {persona.name}
+        {candidate.name}
       </Text>
       <Text fontFamily='LatoRegular' color='blueDarker' numberOfLines={4}>
-        {persona.description}
+        {candidate.description}
       </Text>
-      <SocialMediaIcons social={persona.social} />
-      <Button onPress={() => router.push(`/concursante/${persona.id}`)}>
+      <SocialMediaIcons social={candidate.social} />
+      <Button onPress={() => router.push(`/concursante/${candidate.id}`)}>
         <Text>Ver mas</Text>
       </Button>
-      <Button onPress={() => voteFavorite()}>
+      <Button onPress={() => {}}>
         <View style={styles.rectangle}>
           <Text fontFamily='LatoRegular' color='blue'>
             Votar favorita

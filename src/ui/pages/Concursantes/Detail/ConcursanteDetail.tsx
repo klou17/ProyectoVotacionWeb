@@ -1,14 +1,15 @@
-import { persons } from '../persons'
 import { useLocalSearchParams } from 'expo-router'
 import { MotiText, MotiView } from 'moti'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { injectModule } from '@/src/di/injectModule'
 
 export const ConcursanteDetail = () => {
-  const { id } = useLocalSearchParams() // Obtenemos el ID desde la URL
+  const { id } = useLocalSearchParams()
 
-  // Buscar el concursante en la lista
-  const persona = persons.find(c => c.id === id)
-  if (!persona) {
+  const getCandidate = injectModule('getCandidate')
+  const candidate = getCandidate(id[0])
+
+  if (!candidate) {
     return (
       <View style={styles.container}>
         <Text style={styles.error}>Concursante no encontrado</Text>
@@ -28,35 +29,16 @@ export const ConcursanteDetail = () => {
         from={{ scale: 0.8 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', damping: 10 }}>
-        <Image source={{ uri: persona.photo }} style={styles.image} />
+        <Image source={{ uri: candidate.photo }} style={styles.image} />
       </MotiView>
 
       {/* Nombre y descripción */}
       <MotiText style={styles.name} from={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 300 }}>
-        {persona.name}
+        {candidate.name}
       </MotiText>
       <MotiText style={styles.description} from={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 400 }}>
-        {persona.description}
+        {candidate.description}
       </MotiText>
-
-      {/* Redes Sociales */}
-      {/* <View style={styles.socialContainer}>
-        {persona.social?.instagram && (
-          <TouchableOpacity style={styles.iconButton}>
-            <FontAwesome name="instagram" size={24} color="#E1306C" />
-          </TouchableOpacity>
-        )}
-        {persona.social?.twitter && (
-          <TouchableOpacity style={styles.iconButton}>
-            <FontAwesome name="twitter" size={24} color="#1DA1F2" />
-          </TouchableOpacity>
-        )}
-        {persona.social?.facebook && (
-          <TouchableOpacity style={styles.iconButton}>
-            <FontAwesome name="facebook" size={24} color="#1877F2" />
-          </TouchableOpacity>
-        )}
-      </View> */}
     </MotiView>
   )
 }
