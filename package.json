@@ -23,6 +23,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "awilix": "^12.0.4",
     "expo": "~52.0.32",
     "expo-constants": "~17.0.5",
     "expo-font": "^13.0.3",
