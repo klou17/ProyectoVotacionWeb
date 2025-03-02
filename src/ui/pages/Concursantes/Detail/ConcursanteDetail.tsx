@@ -23,7 +23,6 @@ export const ConcursanteDetail = () => {
       from={{ opacity: 0, translateY: 50 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ type: 'timing', duration: 500 }}>
-      {/* Imagen del concursante */}
       <MotiView
         style={styles.imageContainer}
         from={{ scale: 0.8 }}

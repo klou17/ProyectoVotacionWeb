@@ -1,9 +1,9 @@
-import { Button } from '../../../components/Button'
-import { ImageContent } from '../../../components/Image'
-import { SocialMediaIcons } from '../../../components/SocialMediaIcon'
 import { useRouter } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import { Candidate } from '@/src/core/candidates/domain/candidate'
+import { Button } from '@/src/ui/components/Button'
+import { ImageContent } from '@/src/ui/components/Image'
+import { SocialMediaIcons } from '@/src/ui/components/SocialMediaIcon'
 import { Text } from '@/src/ui/components/Text'
 
 export const ConcursanteListItem = ({ candidate }: { candidate: Candidate }) => {
@@ -12,22 +12,34 @@ export const ConcursanteListItem = ({ candidate }: { candidate: Candidate }) => 
   return (
     <View style={styles.card}>
       <ImageContent url={candidate.photo} />
+
       <Text fontFamily='LatoBold' size='md'>
         {candidate.name}
       </Text>
-      <Text fontFamily='LatoRegular' color='blueDarker' numberOfLines={4}>
-        {candidate.description}
-      </Text>
-      <SocialMediaIcons social={candidate.social} />
-      <Button onPress={() => router.push(`/concursante/${candidate.id}`)}>
-        <Text>Ver mas</Text>
-      </Button>
-      <Button onPress={() => {}}>
-        <View style={styles.rectangle}>
+
+      <View style={styles.description}>
+        <Text
+          fontFamily='LatoRegular'
+          color='blueDarker'
+          numberOfLines={2}
+          ellipsizeMode='middle'
+          style={{ flexShrink: 1 }}>
+          {candidate.description}
+        </Text>
+
+        <Button onPress={() => router.push(`/concursante/${candidate.id}`)}>
           <Text fontFamily='LatoRegular' color='blue'>
-            Votar favorita
+            Ver más
           </Text>
-        </View>
+        </Button>
+      </View>
+
+      <SocialMediaIcons social={candidate.social} />
+
+      <Button onPress={() => {}} style={styles.rectangle}>
+        <Text fontFamily='LatoRegular' color='blue'>
+          Votar favorita
+        </Text>
       </Button>
     </View>
   )
@@ -60,5 +72,11 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 12,
+  },
+  description: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: 8,
   },
 })

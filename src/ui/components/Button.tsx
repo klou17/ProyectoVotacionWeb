@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react'
-import { TouchableOpacity } from 'react-native'
+import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native'
 
 interface Props {
   children: ReactNode
+  style?: StyleProp<ViewStyle>
   onPress: () => void
 }
 
-export const Button = ({ onPress, children }: Props) => {
-  return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>
+export const Button = ({ onPress, children, style }: Props) => {
+  return (
+    <TouchableOpacity style={style} onPress={onPress}>
+      {children}
+    </TouchableOpacity>
+  )
 }
