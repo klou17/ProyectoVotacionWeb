@@ -1,16 +1,21 @@
-export interface Persona {
-  id: string
-  name: string
-  photo: string
-  description: string
-  social: {
-    facebook: string
-    twitter: string
-    instagram: string
+import { Candidate } from '@/src/core/candidates/domain/candidate'
+import { CandidatesRepository } from '@/src/core/candidates/domain/candidatesRepository'
+
+export const candidatesLocalRepository = (): CandidatesRepository => {
+  const repository = {
+    getAll: () => {
+      return candidates
+    },
+    getCandidate: (id: string) => {
+      const candidates = repository.getAll()
+      return candidates.find(candidate => candidate.id === id)
+    },
   }
+
+  return repository
 }
 
-export const persons: Persona[] = [
+const candidates: Candidate[] = [
   {
     id: '1',
     name: 'Earnest Green',

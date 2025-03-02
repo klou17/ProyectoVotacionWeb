@@ -1,5 +1,5 @@
-import { ConcursantesPage } from '@/src/ui/pages/Concursantes/Concursantes'
+import { ConcursantesList } from '@/src/ui/pages/Concursantes/List/ConcursantesList'
 
 export default function Tab() {
-  return <ConcursantesPage />
+  return <ConcursantesList />
 }

@@ -2,6 +2,7 @@ import { fonts, fontSize } from '../styles/fonts'
 import type { ReactNode } from 'react'
 import type { TextStyle } from 'react-native'
 import { Text as TextReactNative } from 'react-native'
+import { TextProps } from 'react-native'
 import type { color } from '@/src/ui/styles/color'
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
   style?: TextStyle
   children?: ReactNode
   numberOfLines?: number
+  ellipsizeMode?: TextProps['ellipsizeMode']
 }
 
 export const Text = ({
@@ -20,6 +22,7 @@ export const Text = ({
   style,
   children,
   numberOfLines,
+  ellipsizeMode,
 }: Props) => {
   return (
     <TextReactNative
@@ -31,7 +34,8 @@ export const Text = ({
         },
         style, // Allow additional styles
       ]}
-      numberOfLines={numberOfLines}>
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}>
       {children}
     </TextReactNative>
   )
