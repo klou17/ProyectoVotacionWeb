@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { useEffect } from 'react'
 import { buildModules, registerModules } from '@/src/di/moduleContainer'
+import { AuthProvider } from '@/src/ui/providers/Providers'
 
 registerModules(buildModules())
 
@@ -25,9 +26,12 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='(tabs)' />
-      <Stack.Screen name='concursante/id' />
-    </Stack>
+    <AuthProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='authentication/login' />
+        <Stack.Screen name='(tabs)' />
+        <Stack.Screen name='concursante/id' />
+      </Stack>
+    </AuthProvider>
   )
 }
