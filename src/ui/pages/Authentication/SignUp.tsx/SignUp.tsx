@@ -1,29 +1,16 @@
-import { Button, StyleSheet, TextInput, View } from 'react-native'
+import { View } from 'react-native'
+import { PrimaryButton } from '@/src/ui/components/Button/PrimaryButton'
+import { TextInput } from '@/src/ui/components/TextInput'
 
 export const SignUp = () => {
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.input} placeholder='Full Name' placeholderTextColor='#b0b0b0' />
-      <TextInput style={styles.input} placeholder='Username' placeholderTextColor='#b0b0b0' />
-      <TextInput style={styles.input} placeholder='Email Address' placeholderTextColor='#b0b0b0' />
-      <TextInput style={styles.input} placeholder='Password' secureTextEntry placeholderTextColor='#b0b0b0' />
-      <TextInput style={styles.input} placeholder='Verify Password' secureTextEntry placeholderTextColor='#b0b0b0' />
-      <Button title='Submit' color='#3498db' onPress={() => alert('Sign Up Submitted')} />
+    <View style={{ gap: 24 }}>
+      <TextInput placeholder='Nombre' />
+      <TextInput placeholder='Apellidos' />
+      <TextInput placeholder='Correo Electrónico' />
+      <TextInput placeholder='Contraseña' isSecureEntry={true} />
+      <TextInput placeholder='Confirmar contraseña' isSecureEntry={true} />
+      <PrimaryButton title={'Crear cuenta'} onPress={() => alert('Sign Up Submitted')}></PrimaryButton>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 16,
-  },
-  input: {
-    height: 50,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 25,
-    paddingHorizontal: 15,
-    fontSize: 16,
-    backgroundColor: '#f9f9f9',
-  },
-})
