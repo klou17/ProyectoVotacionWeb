@@ -14,7 +14,7 @@ export const TabButtons = ({
     <View style={styles.container}>
       <Button
         onPress={() => setIsSignIn(true)}
-        style={{ ...styles.button, backgroundColor: isSignIn ? color.beige : color.blueDarker }}>
+        style={{ ...styles.button, backgroundColor: isSignIn ? color.white : 'transparent' }}>
         <Text fontFamily='LatoBold' color={isSignIn ? 'blueDarker' : 'white'}>
           Sign In
         </Text>
@@ -22,7 +22,7 @@ export const TabButtons = ({
 
       <Button
         onPress={() => setIsSignIn(false)}
-        style={{ ...styles.button, backgroundColor: !isSignIn ? color.beige : color.blueDarker }}>
+        style={{ ...styles.button, backgroundColor: !isSignIn ? color.white : 'transparent' }}>
         <Text fontFamily='LatoBold' color={!isSignIn ? 'blueDarker' : 'white'}>
           Sign Up
         </Text>
@@ -35,12 +35,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
+    backgroundColor: color.blueDarker,
+    borderRadius: 16,
+    padding: 6,
   },
   button: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    paddingVertical: 12,
-    paddingHorizontal: 48,
+    borderRadius: 12,
+    paddingVertical: 6,
+    paddingHorizontal: 64,
     alignItems: 'center',
   },
 })

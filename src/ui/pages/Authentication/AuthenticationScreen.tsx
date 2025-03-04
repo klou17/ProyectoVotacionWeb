@@ -18,14 +18,17 @@ export const AuthenticationScreen = () => {
     <ImageBackground source={wallpaper}>
       <View style={styles.overlay}></View>
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-        <TabButtons isSignIn={isSignIn} setIsSignIn={setIsSignIn}></TabButtons>
-        <View style={styles.formContainer}>
-          <View style={styles.formColumn}>{isSignIn ? <Login /> : <SignUp />}</View>
-          <VerticalLine />
-          <View style={styles.formColumn}>
-            <Text fontFamily='LatoBold' color={'blueDarker'}>
-              Elige a tu participante favorito y vota por él/ella
-            </Text>
+        <View style={styles.container}>
+          <TabButtons isSignIn={isSignIn} setIsSignIn={setIsSignIn} />
+
+          <View style={styles.formContainer}>
+            <View style={styles.formColumn}>{isSignIn ? <Login /> : <SignUp />}</View>
+            <VerticalLine />
+            <View style={styles.formColumn}>
+              <Text fontFamily='LatoBold' color={'blueDarker'}>
+                Elige a tu participante favorito y vota por él/ella
+              </Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -40,23 +43,25 @@ const styles = StyleSheet.create({
     backgroundColor: color.black,
   },
   scrollViewContainer: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
-    alignItems: 'flex-start',
-    padding: 24,
+    alignItems: 'center',
   },
-  formContainer: {
+  container: {
     flex: 0.6,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    backgroundColor: color.beige,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 24,
     gap: 16,
-    backgroundColor: color.beige,
-    borderTopRightRadius: 10,
-    borderEndStartRadius: 10,
-    borderEndEndRadius: 10,
+    borderRadius: 16,
     boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
+  },
+  formContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
   },
   formColumn: {
     flex: 1,
