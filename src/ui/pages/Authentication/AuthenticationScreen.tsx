@@ -1,21 +1,19 @@
-import { ImageBackground } from '../../components/ImageBackground'
+import { ImagesType } from '../../../../assets/images/ImageType'
+import { ImageBackground } from '../../components/Images/ImageBackground'
 import { VerticalLine } from '../../components/VerticalLine'
 import { color } from '../../styles/color'
 import { useState } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
 import { Text } from '@/src/ui/components/Text'
 import { TabButtons } from './components/TabButtons'
-import { Login } from './Login.tsx/Login'
-import { SignUp } from './SignUp.tsx/SignUp'
-
-/* eslint-disable @typescript-eslint/no-require-imports */
-const wallpaper = require('@/assets/images/login-wallpaper.jpg')
+import { Login } from './Login/Login'
+import { SignUp } from './SignUp/SignUp'
 
 export const AuthenticationScreen = () => {
   const [isSignIn, setIsSignIn] = useState(true)
 
   return (
-    <ImageBackground source={wallpaper}>
+    <ImageBackground source={ImagesType.loginWallpaper}>
       <View style={styles.overlay}></View>
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
         <View style={styles.container}>

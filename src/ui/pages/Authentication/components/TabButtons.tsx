@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: color.blueDarker,
     borderRadius: 16,
     padding: 6,
+    boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   },
   button: {
     borderRadius: 12,

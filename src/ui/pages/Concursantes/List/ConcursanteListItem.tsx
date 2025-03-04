@@ -2,9 +2,9 @@ import { useRouter } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import { Candidate } from '@/src/core/candidates/domain/candidate'
 import { Button } from '@/src/ui/components/Button/Button'
-import { ImageContent } from '@/src/ui/components/Image'
-import { SocialMediaIcons } from '@/src/ui/components/SocialMediaIcon'
+import { ImageContent } from '@/src/ui/components/Images/Image'
 import { Text } from '@/src/ui/components/Text'
+import { SocialMediaIcons } from '@/src/ui/pages/Concursantes/List/components/SocialMediaIcon'
 
 export const ConcursanteListItem = ({ candidate }: { candidate: Candidate }) => {
   const router = useRouter()
