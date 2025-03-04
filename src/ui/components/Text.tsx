@@ -1,9 +1,9 @@
-import { fonts, fontSize } from '../styles/fonts'
 import type { ReactNode } from 'react'
 import type { TextStyle } from 'react-native'
 import { Text as TextReactNative } from 'react-native'
 import { TextProps } from 'react-native'
 import type { color } from '@/src/ui/styles/color'
+import { fonts, fontSize } from '@/src/ui/styles/fonts'
 
 interface Props {
   size?: keyof typeof fontSize

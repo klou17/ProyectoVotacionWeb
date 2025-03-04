@@ -1,13 +1,13 @@
-import { ImagesType } from '../../../../assets/images/ImageType'
-import { ImageBackground } from '../../components/Images/ImageBackground'
-import { VerticalLine } from '../../components/VerticalLine'
-import { color } from '../../styles/color'
 import { useState } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
+import { ImagesType } from '@/assets/images/ImageType'
+import { ImageBackground } from '@/src/ui/components/Images/ImageBackground'
 import { Text } from '@/src/ui/components/Text'
-import { TabButtons } from './components/TabButtons'
-import { Login } from './Login/Login'
-import { SignUp } from './SignUp/SignUp'
+import { VerticalLine } from '@/src/ui/components/VerticalLine'
+import { TabButtons } from '@/src/ui/pages/Authentication/components/TabButtons'
+import { Login } from '@/src/ui/pages/Authentication/Login/Login'
+import { SignUp } from '@/src/ui/pages/Authentication/SignUp/SignUp'
+import { color } from '@/src/ui/styles/color'
 
 export const AuthenticationScreen = () => {
   const [isSignIn, setIsSignIn] = useState(true)

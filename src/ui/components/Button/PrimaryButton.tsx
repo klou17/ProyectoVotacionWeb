@@ -1,7 +1,7 @@
-import { color } from '../../styles/color'
 import { StyleSheet } from 'react-native'
 import { Button } from '@/src/ui/components/Button/Button'
 import { Text } from '@/src/ui/components/Text'
+import { color } from '@/src/ui/styles/color'
 
 interface Props {
   title: string

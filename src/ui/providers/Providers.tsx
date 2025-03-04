@@ -1,8 +1,8 @@
-import { userAtom } from '../atoms/userAtom'
 import { Slot, useRouter } from 'expo-router'
 import { useAtom } from 'jotai'
 import { ReactNode, useEffect } from 'react'
 import { User } from '@/src/core/authentication/domain/user'
+import { userAtom } from '@/src/ui/atoms/userAtom'
 
 interface Props {
   children: ReactNode

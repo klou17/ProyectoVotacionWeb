@@ -1,6 +1,6 @@
-import { color } from '../styles/color'
-import { fonts, fontSize } from '../styles/fonts'
 import { StyleSheet, TextInput as TextInputReactNative } from 'react-native'
+import { color } from '@/src/ui/styles/color'
+import { fonts, fontSize } from '@/src/ui/styles/fonts'
 
 interface Props {
   placeholder: string
