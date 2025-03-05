@@ -1,16 +1,17 @@
+import { axiosClient } from '../../shared/network/infrastructure/networkClient'
+import { LoginInput } from '../domain/loginInput'
+import { SignInInput } from '../domain/signinInput'
 import { AuthenticationRepository } from '@/src/core/authentication/domain/authenticationRepository'
 
 export const authenticationLocalRepository = (): AuthenticationRepository => {
-  const repository = {
-    async login(): Promise<void> {
-      try {
-        // Implementar lógica
-        console.log('Usuario autenticado')
-      } catch (error) {
-        console.error('Error en login:', error)
-      }
+  const client = axiosClient({ baseUrl: '' })
+
+  return {
+    login: input => {
+      return client.post<void, LoginInput>('/login', input)
+    },
+    signIn: input => {
+      return client.post<void, SignInInput>('/signIn', input)
     },
   }
-
-  return repository
 }

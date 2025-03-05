@@ -1,19 +1,24 @@
-import { StyleSheet } from 'react-native'
+import { ActivityIndicator, StyleSheet } from 'react-native'
 import { Button } from '@/src/ui/components/Button/Button'
 import { Text } from '@/src/ui/components/Text'
 import { color } from '@/src/ui/styles/color'
 
 interface Props {
   title: string
+  isLoading?: boolean
   onPress: () => void
 }
 
-export const PrimaryButton = ({ title, onPress }: Props) => {
+export const PrimaryButton = ({ title, isLoading = false, onPress }: Props) => {
   return (
     <Button style={styles.button} onPress={onPress}>
-      <Text fontFamily={'LatoBold'} color={'white'}>
-        {title}
-      </Text>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <Text fontFamily={'LatoBold'} color={'white'}>
+          {title}
+        </Text>
+      )}
     </Button>
   )
 }

@@ -10,7 +10,10 @@ export const SignUp = () => {
       <TextInput placeholder='Correo Electrónico' />
       <TextInput placeholder='Contraseña' isSecureEntry={true} />
       <TextInput placeholder='Confirmar contraseña' isSecureEntry={true} />
-      <PrimaryButton title={'Crear cuenta'} onPress={() => alert('Sign Up Submitted')}></PrimaryButton>
+      <PrimaryButton
+        title={'Crear cuenta'}
+        isLoading={false}
+        onPress={() => alert('Sign Up Submitted')}></PrimaryButton>
     </View>
   )
 }
